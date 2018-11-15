@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestLogin.View.ViewUserDetails">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <ListView x:Name="listview_user">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label x:Name ="Id" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="Username" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="Fullname" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="Email" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="GroupId" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="TenantId" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

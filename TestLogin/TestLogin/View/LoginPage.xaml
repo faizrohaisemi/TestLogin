@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestLogin.View.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="usernamelbl" Text="Username" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry x:Name="usernametxt" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label x:Name="passwordlbl" Text="Password" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry x:Name="passwordtxt" IsPassword="True" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button x:Name="loginbtn" Text="Login" Clicked="loginbtn_Clicked"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
