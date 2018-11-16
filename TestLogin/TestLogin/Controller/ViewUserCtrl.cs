@@ -31,9 +31,9 @@ namespace TestLogin.Controller
             }
 
             UserListModel.RootObject data = JsonConvert.DeserializeObject<UserListModel.RootObject>(result);
-            
+
             return data;
-            
+
         }
 
         internal Task GoLogin(string url, string token)

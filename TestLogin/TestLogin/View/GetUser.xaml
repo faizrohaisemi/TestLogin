@@ -5,8 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Button x:Name="Showuserlist" Text="Show User" Clicked="Showuserlist_Clicked"/>
-            <Button x:Name="showticketlist" Text="Show Ticket " Clicked="Showticketlist_Clicked"/>
-
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

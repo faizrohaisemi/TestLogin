@@ -4,22 +4,19 @@
              x:Class="TestLogin.View.ViewUserDetails">
     <ContentPage.Content>
         <StackLayout>
-
-            <ListView x:Name="listview_user" ItemTapped="OnItemTapped" ItemsSource ="{Binding .}" HasUnevenRows="True" >
+            
+            <ListView x:Name="listview_user">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            
-                                <StackLayout Padding="5,0,0,0" Orientation="Vertical" Margin="0,5,0,0"  >
-                                    
-                                    <Label x:Name ="Id"  Text= "{ Binding id }" HorizontalOptions="FillAndExpand" />
-                                    <Label x:Name ="Username" Text="{Binding username}" HorizontalOptions="FillAndExpand" />
-                                    <Label x:Name ="Fullname" Text="{Binding fullname}" HorizontalOptions="FillAndExpand" />
-                                    <Label x:Name ="Email"  Text="{Binding email}" HorizontalOptions="FillAndExpand" />
-                                    <Label x:Name ="GroupId" Text="{Binding group_id}" HorizontalOptions="FillAndExpand" />
-                                    <Label x:Name ="TenantId" Text="{Binding tenant_id}" HorizontalOptions="FillAndExpand" />
-                                </StackLayout>
-                            
+                            <StackLayout Orientation="Vertical">
+                                <Label x:Name ="Id" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="Username" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="Fullname" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="Email" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="GroupId" HorizontalOptions="FillAndExpand" />
+                                <Label x:Name ="TenantId" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

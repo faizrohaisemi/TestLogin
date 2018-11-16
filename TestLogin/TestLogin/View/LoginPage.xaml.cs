@@ -22,25 +22,13 @@ namespace TestLogin.View
 
 
             string url = "https://sapura.api.simdesk.co/users/token";
-            string username = usernametxt.Text; //"jasdy3";
-            string password = passwordtxt.Text; //"admin1234";
-
-            
+            string username = "jasdy3";
+            string password = "admin1234";
 
             Loginctrl controller = new Loginctrl();
-            string status = await controller.GoLogin(url, username, password);
+            await controller.GoLogin(url, username, password);
 
-            if(status == "false")
-            {
-                await DisplayAlert("Error", "Please Insert Correct Username and Password", "Okay");
-
-            }
-            else
-            {
-                await Navigation.PushAsync(new GetUser());
-            }
-
-            
+            await Navigation.PushAsync(new NavigationPage(new GetUser()));
         }
         
     }

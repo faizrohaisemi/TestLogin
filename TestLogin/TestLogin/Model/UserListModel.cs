@@ -14,7 +14,6 @@ namespace TestLogin.Model
             public string email { get; set; }
             public string group_id { get; set; }
             public int tenant_id { get; set; }
-
         }
 
         public class RootObject
