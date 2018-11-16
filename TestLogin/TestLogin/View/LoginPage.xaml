@@ -4,14 +4,14 @@
              x:Class="TestLogin.View.LoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Welcome to SimDESK Mobile Apps!" FontSize="Medium"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-            <Label x:Name="usernamelbl" Text="Username" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Entry x:Name="usernametxt" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Label x:Name="passwordlbl" Text="Password" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Entry x:Name="passwordtxt" IsPassword="True" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label x:Name="usernamelbl" Text="Insert Username" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry x:Name="usernametxt"  />
+            <Label x:Name="passwordlbl" Text="Insert Password" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry x:Name="passwordtxt" IsPassword="True" />
             <Button x:Name="loginbtn" Text="Login" Clicked="loginbtn_Clicked"/>
             
         </StackLayout>

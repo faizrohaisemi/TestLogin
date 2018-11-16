@@ -1,11 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TestLogin.Controller;
@@ -15,35 +11,30 @@ using Xamarin.Forms.Xaml;
 
 namespace TestLogin.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ViewUserDetails : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ViewTicketPage : ContentPage
+    {
+
+
         public string token = "";
-        public object store;
 
-        
-
-        public  ViewUserDetails ()
-		{
-			InitializeComponent ();
-            
-
+        public ViewTicketPage()
+        {
+            InitializeComponent();
 
             if (Application.Current.Properties.ContainsKey("login_token"))
             {
                 token = Application.Current.Properties["login_token"] as string;
             }
-            sortinfo();
-            
+            showticket();
         }
-
-        public async  void sortinfo()
+        public async void showticket()
         {
 
-            string url = "https://sapura.api.simdesk.co/users";
+            string url = "https://sapura.api.simdesk.co/tickets/1";
 
-            ViewUserCtrl controller = new ViewUserCtrl();
-            UserListModel.RootObject usermodel = await controller.GetUser(url, token);
+            ViewTicket controller = new ViewTicket();
+            TicketModel.RootObject getticketmodel = await controller.UpdateTicket(url, token);
 
 
             var listView = new ListView();
@@ -52,19 +43,22 @@ namespace TestLogin.View
 
 
             //int loop = 0;
-            List<UserListModel.Datum> userlist = new List<UserListModel.Datum>();
-            foreach (var item in usermodel.data)
+            List<TicketModel.Ticket> ticketlist = new List<TicketModel.Ticket>();
+            foreach (var item in getticketmodel.tickets)
             {
+
                 int id = item.id;
-                string username = item.username;
-                string fullname = item.fullname;
-                string email = item.email;
-                string group_id = item.group_id;
                 int tenant_id = item.tenant_id;
+                string requester = item.requester;
+                string mesra_link_log_no = item.mesra_link_log_no;
+                string title = item.title;
+                DateTime date_created = item.date_created;
+                DateTime time_created = item.time_created;
+                int created_by = item.created_by;
 
-                userlist.Add(item);
+                ticketlist.Add(item);
 
-                listview_user.ItemsSource = userlist;
+                listview_ticket.ItemsSource = ticketlist;
 
             }
             //listView.ItemsSource = userlist;
@@ -76,7 +70,7 @@ namespace TestLogin.View
             };
 
 
-            Padding = new Thickness(0,20,0,0);
+            Padding = new Thickness(0, 20, 0, 0);
             //Content = listView;
 
 
@@ -84,7 +78,7 @@ namespace TestLogin.View
 
 
 
-            Debug.WriteLine("On VIEW USER DETAILS PAGE " + usermodel);
+            Debug.WriteLine("On VIEW USER DETAILS PAGE " + ticketlist);
 
         }
 
@@ -94,5 +88,9 @@ namespace TestLogin.View
             Debug.WriteLine("Tapped: " + e.Item);
             ((ListView)sender).SelectedItem = null; // de-select the row
         }
+
+
+
     }
 }
+

@@ -28,6 +28,11 @@ namespace TestLogin.Controller
                 });
                 HttpResponseMessage responseMessage = await httpClient.PostAsync(url, formContent);
                 result = await responseMessage.Content.ReadAsStringAsync();
+                if(responseMessage.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    return "false";
+
+                }
                 Debug.WriteLine(result);
             }
             catch (Exception e) {
